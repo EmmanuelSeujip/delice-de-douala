@@ -57,8 +57,9 @@
           padding: 10px 0px;
           }
           .star{
-            font-size: 20px;
+            font-size: 25px;
             color: var(--primary);
+            cursor: pointer;
           }
           .filled{
             color: gold;

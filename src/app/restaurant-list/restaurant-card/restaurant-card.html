@@ -12,9 +12,9 @@
       <div class="star-rating">
         @for (index of stars; track index) {
           @if (index < restaurant.currentRating) {
-            <span class="star filled" >★</span>
+            <span class="star filled" (click)="onStarClick(index + 1)">★</span>
           } @else {
-            <span class="star empty">☆</span>
+            <span class="star empty" (click)="onStarClick(index + 1)">☆</span>
           }
         }
       </div>
