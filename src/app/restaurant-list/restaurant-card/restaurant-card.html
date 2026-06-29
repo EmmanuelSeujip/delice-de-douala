@@ -1,1 +1,24 @@
-<p>restaurant-card works!</p>
+<div class="card-container">
+  <div class="district">
+    {{restaurant.district}}
+  </div>
+  <img [src]="restaurant.url" alt="">
+  <div class="all-information">
+    <div class="information">
+      <div class="name">{{restaurant.name}} </div>
+      <div class="specialty">{{restaurant.specialty}} </div>
+    </div>
+    <div class="rating">
+      <div class="star-rating">
+        @for (index of stars; track index) {
+          @if (index < restaurant.currentRating) {
+            <span class="star filled" >★</span>
+          } @else {
+            <span class="star empty">☆</span>
+          }
+        }
+      </div>
+    </div>
+  </div>
+
+</div>

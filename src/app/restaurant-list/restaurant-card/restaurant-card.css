@@ -1,0 +1,65 @@
+.card-container {
+  width: 280px;
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid rgba(141, 75, 0,0.1 );
+  }
+  .district {
+    background-color: white;
+    color: var(--secondary);
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .all-information{
+    padding: 10px;
+    }
+
+    img{
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .information{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(141, 75, 0,0.1 );
+    }
+      .name{
+        font-size: 18px;
+        font-weight:700;
+        color: var(--primary);
+      }
+      .specialty{
+        font-size: 11px;
+        color: var(--secondary);
+        font-weight: 700;
+      }
+      .rating {
+        font-size: 11px;
+        color: var(--secondary);
+        font-weight: 700;
+        padding: 10px 0px;
+        }
+        .star-rating{
+          display: flex;
+          gap: 5px;
+          padding: 10px 0px;
+          }
+          .star{
+            font-size: 20px;
+            color: var(--primary);
+          }
+          .filled{
+            color: gold;
+          }

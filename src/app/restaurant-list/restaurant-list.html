@@ -1,1 +1,5 @@
-<p>restaurant-list works!</p>
+<div class="list-container"> 
+  @for (restaurant of restaurants(); track $index) { 
+    <app-restaurant-card [restaurant]="restaurant" (ratingChanged)="updateRating($event.id, $event.rating)"></app-restaurant-card> 
+  } 
+</div>
