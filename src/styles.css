@@ -92,3 +92,15 @@
     --surface-variant: #554336;
   }
 }
+*{
+  font-family: "Manrope", sans-serif;
+}
+.second-font{
+  font-family: "Work Sans", sans-serif;
+}
+body{
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

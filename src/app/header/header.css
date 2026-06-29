@@ -1,0 +1,67 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background-color: var(--surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+  header > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: var(--surface-container-low);
+    color: var(--on-surface);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    }
+    .filter:hover {
+      background-color: var(--surface-container);
+      transform: translateY(-1px);
+    }
+  .information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    background-color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 12px !important;
+    }
+    .numberNotes, .mean {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .information svg{
+      width: 16px;
+      height: 16px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+    }
+
+img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
