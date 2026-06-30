@@ -27,6 +27,7 @@ header {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    position: relative;
     }
     .filter:hover {
       background-color: var(--surface-container);
