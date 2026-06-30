@@ -1,8 +1,14 @@
-<app-header></app-header>
+<app-header 
+  (ratingChanged)="filterByRating($event)" 
+  [allRestaurants]="allRestaurants()">
+</app-header>
 <main>
   <section>
     <h1 class="big-title">Découvrez les saveurs de Douala</h1>
     <p class="medium-title">Un guide gastronomique organisé par quartiers. Notez vos expériences pour créer votre carnet de route personnalisé.</p>
   </section>
-  <app-restaurant-list [allRestaurants]="restaurants()"></app-restaurant-list>
+  <app-restaurant-list 
+    [allRestaurants]="restaurants()" 
+    (ratingChanged)="updateRating($event)">
+  </app-restaurant-list>
 </main>

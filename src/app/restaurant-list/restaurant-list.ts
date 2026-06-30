@@ -1,4 +1,4 @@
-import { Component, input, linkedSignal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Restaurant } from '../models/restaurant';
 import { RestaurantCard } from './restaurant-card/restaurant-card';
 @Component({
@@ -9,12 +9,11 @@ import { RestaurantCard } from './restaurant-card/restaurant-card';
 })
 export class RestaurantList {
   allRestaurants = input<Restaurant[]>([]);
-  restaurants = linkedSignal(() => this.allRestaurants());
+
+  // Propage le changement de rating vers le composant parent (App)
+  ratingChanged = output<{ id: number; rating: number }>();
+
   updateRating(restaurantId: number, newRating: number): void {
-    this.restaurants.update(restaurants =>
-      restaurants.map(r =>
-        r.id === restaurantId ? { ...r, currentRating: newRating } : r
-      )
-    );
+    this.ratingChanged.emit({ id: restaurantId, rating: newRating });
   }
 }

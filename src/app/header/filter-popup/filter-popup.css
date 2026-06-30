@@ -1,0 +1,62 @@
+.popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  width: 260px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  z-index: 100;
+}
+
+.popup-label {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 1rem;
+}
+
+.range-wrapper {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.range-wrapper input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.bubble {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #4f46e5;
+  border-bottom: none;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
