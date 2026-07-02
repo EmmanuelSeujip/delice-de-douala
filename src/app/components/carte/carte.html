@@ -1,4 +1,26 @@
 <div class="container py-5">
+  
+  @if(platDuJour()){
+  <h1 class="text-center mb-4 fw-bold primary-text">Notre plat du phare</h1>
+  <div class="menu-card-wrapper p-2">
+    <div class="card h-100 shadow-sm border-0 transition-hover">
+      <img [src]="platDuJour()?.image" class="card-img-top object-fit-cover" [alt]="platDuJour()?.nom" style="height: 160px;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h5 class="card-title fw-bold text-truncate mb-0" style="max-width: 65%;">{{ platDuJour()?.nom }}</h5>
+            <span class="badge primary-bg-subtle primary-text rounded-pill px-2 py-1 small">{{ platDuJour()?.prix }} FCFA</span>
+          </div>
+          <p class="card-text text-muted small text-line-clamp">{{ platDuJour()?.description }}</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <span class="badge text-uppercase bg-secondary-subtle text-secondary px-2 py-1 style-category">{{ platDuJour()?.categorie }}</span>
+          <button class="btn btn-outline-primary-custom btn-sm px-3">Commander</button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
   <h1 class="text-center mb-4 fw-bold primary-text">Notre Menu Traditionnel</h1>
   <div class="d-flex justify-content-center mb-5">
     <ul class="nav nav-pills bg-light p-2 rounded-pill shadow-sm">
