@@ -2,7 +2,24 @@
 .menu-grid-height {
   height: 760px;
 }
-
+.primary-text{
+  color: var(--primary) !important;
+}
+.primary-bg{
+  background-color: var(--primary) !important;
+}
+.primary-bg-subtle {
+  background-color: color-mix(in srgb, var(--primary) 15%, white) !important;
+}
+.btn-outline-primary-custom {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background: transparent;
+}
+.btn-outline-primary-custom:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
 .menu-card-wrapper {
   width: 25%;
   height: 380px;
@@ -36,7 +53,7 @@
   color: #495057;
 }
 .nav-link:not(.active):hover {
-  background-color: rgba(25, 135, 84, 0.1);
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
   color: var(--primary);
 }
 
