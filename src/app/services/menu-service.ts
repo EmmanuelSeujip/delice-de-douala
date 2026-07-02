@@ -3,12 +3,13 @@ import Plat from '../models/plat';
 import { httpResource } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
-  private readonly _plats = httpResource<Plat[]>(() => '/api/plat.json');
+  private readonly _plats = httpResource<Plat[]>(() => environment.platApi);
   private readonly _currentFilter = signal<string>('all');
   readonly filteredPlats = computed(() => {
     const filter = this._currentFilter();

@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MenuService } from '../../services/menu-service';
-import { Observable, of } from 'rxjs';
-import Plat from '../../models/plat';
+
 @Component({
   selector: 'app-carte',
   imports: [],
