@@ -1,0 +1,72 @@
+/* Hauteur fixe globale pour contraindre l'alignement sur 2 lignes de 380px */
+.menu-grid-height {
+  height: 760px;
+}
+
+.menu-card-wrapper {
+  width: 25%;
+  height: 380px;
+}
+
+@media (max-width: 992px) {
+  .menu-card-wrapper {
+    width: 33.333%; 
+  }
+}
+
+/* Smartphones Paysage : Passage à 2 colonnes */
+@media (max-width: 768px) {
+  .menu-card-wrapper {
+    width: 50%;     
+  }
+}
+
+/* Smartphones Portrait : 1 seule colonne visible, laisse deviner la suivante */
+@media (max-width: 576px) {
+  .menu-card-wrapper {
+    width: 85%;     
+  }
+}
+
+/* Design des onglets & boutons */
+.transition-all {
+  transition: all 0.25s ease-in-out;
+}
+.nav-link {
+  color: #495057;
+}
+.nav-link:not(.active):hover {
+  background-color: rgba(25, 135, 84, 0.1);
+  color: var(--primary);
+}
+
+/* Scrollbar personnalisée */
+.menu-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.menu-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.menu-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* Effets des cartes */
+.transition-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.transition-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.text-line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+.style-category {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
