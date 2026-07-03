@@ -1,3 +1,3 @@
 export const environment = {
-    platApi: 'plat.json'  // ou '/plat.json'
+    platApi: '/plat.json'  // ou '/plat.json'
 };
