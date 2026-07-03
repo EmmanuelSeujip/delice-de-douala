@@ -24,10 +24,8 @@ export class MenuService {
     this._currentFilter.set(value);
   }
   private readonly tick = toSignal(interval(5000), { initialValue: 0 });
-
-  // Se recalcule automatiquement à chaque changement de `tick` OU de `plats`
   readonly platDuJour = computed(() => {
-    this.tick(); // on "lit" le signal pour créer la dépendance réactive
+    this.tick(); 
     const platsArray = this._plats.value() as Plat[] | undefined;
     if (!platsArray || platsArray.length === 0) {
       return undefined;
