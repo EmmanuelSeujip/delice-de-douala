@@ -1,15 +1,17 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import Plat from '../models/plat';
 import { httpResource } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { interval } from 'rxjs';
+import { interval, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
-  private readonly _plats = httpResource<Plat[]>(() => environment.platApi);
+  private platformId = inject(PLATFORM_ID);
+  private readonly _plats = httpResource<Plat[]>(() => isPlatformBrowser(this.platformId) ? environment.platApi : undefined);
   private readonly _currentFilter = signal<string>('all');
   readonly filteredPlats = computed(() => {
     const filter = this._currentFilter();
@@ -23,7 +25,7 @@ export class MenuService {
   setFilter(value: string) {
     this._currentFilter.set(value);
   }
-  private readonly tick = toSignal(interval(5000), { initialValue: 0 });
+  private readonly tick = toSignal(isPlatformBrowser(this.platformId) ? interval(5000) : of(0), { initialValue: 0 });
   readonly platDuJour = computed(() => {
     this.tick(); 
     const platsArray = this._plats.value() as Plat[] | undefined;
