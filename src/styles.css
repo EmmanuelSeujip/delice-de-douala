@@ -104,3 +104,14 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --bs-primary: #8d4b00;
+  --bs-primary-rgb: 141, 75, 0; /* équivalent RGB de --primary */
+  
+  --bs-secondary: var(--secondary);
+  --bs-secondary-rgb: 27, 107, 81;
+  
+  --bs-danger: var(--error);
+  --bs-danger-rgb: 186, 26, 26;
+}
