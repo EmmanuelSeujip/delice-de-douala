@@ -1,9 +1,9 @@
 export default interface Plat {
-  id: string;
+  id?: string;
   nom: string;
-  description: string;
+  description?: string;
   prix: number;
-  categorie: string;
+  categorie?: string;
   image: string;
-  disponible: boolean;
+  disponible?: boolean;
 }

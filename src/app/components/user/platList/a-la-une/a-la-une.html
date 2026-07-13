@@ -1,0 +1,22 @@
+<section class="a-la-une-container position-relative w-100">
+  <img [src]="plat().image" alt="a la une">
+  <div>
+    <div class="">Plat à la une</div>
+    <div>La sugestion du jour</div>
+    <div>{{plat().nom}} </div>
+    <div>{{plat().description}} </div>
+    <div>
+      <span class="material-symbols-outlined">
+        restaurant
+      </span>
+      Commander 
+      <span class="">{{plat().prix}} </span>
+    </div>
+    <div>
+      <span class="material-symbols-outlined">
+        add
+      </span>
+      Ajouter
+    </div>
+  </div>
+</section>
