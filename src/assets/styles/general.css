@@ -5,3 +5,32 @@
 .small-text{
   font-size: 12px;
 }
+.flash-btn {
+  position: relative; 
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  }
+  .flash-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transform: skewX(-25deg);
+    }
+    .flash-btn:hover::before {
+      animation: shine 0.75s ease-in-out;
+    }
+@keyframes shine {
+  100% {
+    left: 150%;
+  }
+}

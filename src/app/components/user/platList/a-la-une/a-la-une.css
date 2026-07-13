@@ -1,0 +1,21 @@
+.a-la-une-container{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat  ;
+  color: white;
+  }
+  .flout{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0 !important;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .a-la-une-container .all-info{
+    z-index: 1000;
+    }
+    .plat-une{
+      width: fit-content;
+    }
+  
