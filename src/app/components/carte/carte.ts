@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MenuService } from '../../services/menu-service';
+import Plat from '../../models/plat';
 
 @Component({
   selector: 'app-carte',
@@ -19,7 +20,8 @@ export class Carte {
     { id: 'Végétarien', label: 'Végétarien' },
     { id: 'Boissons', label: 'Boissons' }
   ];
-  platDuJour=this._menu.platDuJour
+  platDuJour = signal<Plat | null>(null);
+  // platDuJour=this._menu.platDuJour
   ngOnInit(): void {}
 
   setFilter(id: string) {
