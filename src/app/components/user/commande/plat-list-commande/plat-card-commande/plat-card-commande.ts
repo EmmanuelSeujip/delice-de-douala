@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { LigneCommande } from '../../../../../models/ligneCommande';
 
 @Component({
   selector: 'app-plat-card-commande',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './plat-card-commande.css',
 })
 export class PlatCardCommande {
-
+  commande =input.required<LigneCommande>()
 }

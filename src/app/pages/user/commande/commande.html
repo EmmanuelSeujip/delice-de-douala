@@ -1,6 +1,10 @@
-<h1>Finaliser votre commande</h1>
+<!-- Pensez à effacer le mt plutard -->
+<section class="mt-5 container">
+  <h2>Finaliser votre commande</h2>
+  <h6>Verififiez vos article </h6>
+  <div class="d-flex gap-5 w-100" >
+      <app-plat-list-commande [listCommande]="listCommande()" style="flex:5"></app-plat-list-commande>
+      <app-formulaire-commande style="flex: 5;"></app-formulaire-commande>
+  </div>
+</section>
 
-<div class="container">
-    <app-plat-list-commande></app-plat-list-commande>
-    <app-formulaire-commande></app-formulaire-commande>
-</div>
