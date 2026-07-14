@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { ALaUne } from '../../../components/user/platList/a-la-une/a-la-une';
 import Plat from '../../../models/plat';
 import { Carte } from "../../../components/carte/carte";
+import { HeaderUser } from "../../../components/user/shared/header-user/header-user";
 
 @Component({
   selector: 'app-plats-list',
-  imports: [ALaUne, Carte],
+  imports: [ALaUne, Carte, HeaderUser],
   templateUrl: './plats-list.html',
   styleUrl: './plats-list.css',
 })

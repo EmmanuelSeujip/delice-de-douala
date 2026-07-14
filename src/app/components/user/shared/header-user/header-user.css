@@ -1,0 +1,57 @@
+.navbar{
+  background-color: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.9rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999999999999;
+  }
+  .brand img{
+    width: 50px;
+    height: 50px;
+  }
+  .nav-link-custom{
+    color: var(--on-surface);
+    font-weight: 500;
+    margin: 0 1rem;
+    text-decoration: none;
+    padding-bottom: 4px;
+  }
+  .nav-link-custom.active{
+    color: var(--primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary);
+  }
+  .search-box{
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #999;
+    min-width: 220px;
+  }
+  .search-box input{
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #999;
+    width: 100%;
+  }
+  .icon-btn{
+    position: relative;
+    color: #4a4a4a;
+    font-size: 1.2rem;
+    margin-left: 1.2rem;
+    text-decoration: none;
+  }
+  .badge-dot{
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    width: 8px;
+    height: 8px;
+    background-color: #dc3545;
+    border-radius: 50%;
+  }
