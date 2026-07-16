@@ -1,4 +1,5 @@
-import { Injectable, signal, effect } from '@angular/core';
+import { Injectable, signal, effect, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import Plat from '../../../models/plat';
 
 @Injectable({
@@ -6,14 +7,15 @@ import Plat from '../../../models/plat';
 })
 export class PanierStore {
   private readonly LOCAL_STORAGE_KEY = 'delice::panier';
-  
+  private readonly platformId = inject(PLATFORM_ID);
   private _plats = signal<Plat[]>(this.recupererDuStockage());
-
   readonly plats = this._plats.asReadonly();
 
   constructor() {
     effect(() => {
-      localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(this._plats()));
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(this._plats()));
+      }
     });
   }
 
@@ -30,6 +32,7 @@ export class PanierStore {
   }
 
   private recupererDuStockage(): Plat[] {
+    if (!isPlatformBrowser(this.platformId)) return [];
     const panierSauvegarde = localStorage.getItem(this.LOCAL_STORAGE_KEY);
     return panierSauvegarde ? JSON.parse(panierSauvegarde) : [];
   }
