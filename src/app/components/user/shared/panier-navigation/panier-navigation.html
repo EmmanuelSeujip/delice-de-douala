@@ -4,6 +4,8 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
   </div>
   <div class="offcanvas-body">
-    Contenu de la modal
+    @for (plat of plats(); track $index) {
+    <app-plat-card-commande [commande]="plat" />
+    }
   </div>
 </div>
