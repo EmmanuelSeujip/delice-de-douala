@@ -1,0 +1,11 @@
+.searchbar{
+  width: 400px;
+  }
+  .searchbar input{
+    padding-left: 40px;
+  }
+  .searchbar span{
+    left: 20px;
+    color: gray;
+    
+  }

@@ -1,1 +1,25 @@
-<p>header-admin works!</p>
+<header class="navbar align-items-center py-3 px-4 border-bottom border-primary border-opacity-25">
+  <div class="d-flex justify-content-between flex-grow-1">
+    <h3>Bonjour, Emmanuel Seujip</h3>
+    <div class="d-flex gap-5">
+      <div class="search-container d-flex position-relative searchbar">
+        <span class="material-symbols-outlined position-absolute top-50  translate-middle">search</span>
+        <input type="search" name="" id="" class="form-control w-100" placeholder="Rechercher">
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-link position-relative p-2 text-primary" type="button">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="position-absolute top-25 mt-2 start-75 translate-middle badge rounded-pill"
+                style="background-color: var(--error); font-size: 0.6rem;">
+            3
+            <span class="visually-hidden">notifications non lues</span>
+          </span>
+        </button>
+        <div class="d-flex align-items-center justify-content-center p-2 border border-primary rounded-circle text-primary border-opacity-25">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</header>

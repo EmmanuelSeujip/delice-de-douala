@@ -1,42 +1,28 @@
-<aside>
-  <div>
-    <img src="assets/images/logo.png" alt="">
-    <div>
-      <div>Tableau De Bord</div>
-      <div>Delice De Douala</div>
+<aside class="d-flex flex-column vh-100 position-sticky top-0 border-end border-primary border-opacity-25 gap-5 py-4 px-3">
+  <div class="d-flex gap-2 align-items-center">
+    <img src="assets/images/logo.png" alt="Delice De Douala" width="40px" height="40px">
+    <div class="d-flex flex-column align-item-left">
+      <div class="h5 text-primary text-left">Tableau De Bord</div>
+      <div class="second-text">Delice De Douala</div>
     </div>
   </div>
-  <nav>
-    <div>
-      <span class="material-symbols-outlined">dashboard</span>
-      Dashboard
+  <nav class="d-flex flex-column gap-4 align-items-center">
+    @for (item of navLinks; track $index) {
+    <div class="d-flex gap-2 align-items-center navigation" [class.selected]="selectIndex === $index">
+      <span class="material-symbols-outlined">{{ item.icon }}</span>
+      {{ item.name }}
     </div>
-    <div>
-      <span class="material-symbols-outlined">restaurant</span>
-      Restaurant
-    </div>
-    <div>
-      <span class="material-symbols-outlined">food_bank</span>
-      Menus
-    </div>
-    <div>
-      <span class="material-symbols-outlined">event</span>
-      Commandes
-    </div>
-    <div>
-      <span class="material-symbols-outlined">group</span>
-      Utilisateurs
-    </div>
-    <div>
-      <div class="flex">
+    }
+    <nav class="mt-auto d-flex flex-column gap-3 border-top bordedangerr-primary-subtle w-100 align-items-center pt-3">
+      <div class="d-flex gap-2 align-items-center navigation">
         <span class="material-symbols-outlined">settings</span>
         Paramètres
       </div>
-      <div class="flex">
+      <div class="d-flex gap-2 align-items-center text-danger navigation">
         <span class="material-symbols-outlined">logout</span>
         Deconnexion
       </div>
-    </div>
-
+    </nav>
   </nav>
+
 </aside>

@@ -1,0 +1,24 @@
+<section class="a-la-une-container position-relative w-100 rounded-5 overflow-hidden" [style.background-image]="'url(' + plat().image + ')'">
+  <div class="flout"></div>
+  <div class="all-info p-5 d-flex flex-column gap-3 position-relative">
+    <div class="px-3 py-2 bg-secondary rounded-pill plat-une small-text">Plat à la une</div>
+    <div class="h3">La sugestion du jour</div>
+    <div class="h1 text-primary ">{{plat().nom}} </div>
+    <div class="w-50">{{plat().description}} </div>
+    <div class="d-flex gap-5 mt-5">
+      <div class="pointer px-4 py-2 bg-primary rounded-pill d-flex gap-2 justify-content-center align-items-center big-text flash-btn">
+        <span class="material-symbols-outlined">
+          restaurant
+        </span>
+        Commander 
+        <span class="">{{plat().prix | currency:'XAF' }} </span>
+      </div>
+      <div class="pointer px-3 py-1 bg-primary rounded-pill d-flex gap-2 justify-content-center align-items-center flash-btn">
+        <span class="material-symbols-outlined">
+          add
+        </span>
+        Ajouter
+      </div>
+    </div>
+  </div>
+</section>
