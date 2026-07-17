@@ -1,3 +1,4 @@
+<!-- En-tête -->
 <div class="d-flex justify-content-between align-items-center mt-4">
   <div>
     <h3>Gestion des utilisateurs</h3>
@@ -5,15 +6,19 @@
   </div>
   <div class="d-flex gap-2">
     <button class="btn border border-primary">Filtrer</button>
-    <button class="btn btn-primary">Ajouter un utilisateur</button>
+    <button class="btn btn-primary" (click)="openModal()">
+      <span class="material-symbols-outlined icon-btn">person_add</span>
+      Ajouter un utilisateur
+    </button>
   </div>
 </div>
 
+<!-- Tableau des utilisateurs -->
 <div class="row mt-4">
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <table class="table">
+        <table class="table table-hover align-middle">
           <thead>
             <tr>
               <th>Nom</th>
@@ -24,18 +29,65 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>johndoe@gmail.com</td>
-              <td>Admin</td>
-              <td>12 Mars 2024</td>
-              <td>
-                <span class="material-symbols-outlined">more_vert</span>
-              </td>
-            </tr>
+            @for (user of users(); track user.id) {
+              <tr>
+                <td class="fw-semibold">{{ user.nom }}</td>
+                <td class="text-muted">{{ user.email }}</td>
+                <td>
+                  <span class="badge rounded-pill"
+                    [class.bg-danger]="user.role === 'Admin'"
+                    [class.bg-primary]="user.role === 'Modérateur'"
+                    [class.bg-secondary]="user.role === 'Utilisateur'">
+                    {{ user.role }}
+                  </span>
+                </td>
+                <td class="text-muted">{{ user.dateInscription }}</td>
+                <td>
+                  <span class="material-symbols-outlined text-muted" style="cursor:pointer">more_vert</span>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="5" class="text-center text-muted py-4">Aucun utilisateur pour le moment.</td>
+              </tr>
+            }
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Backdrop -->
+@if (isModalOpen()) {
+  <div class="modal-backdrop-custom" (click)="closeModal()"></div>
+}
+
+<!-- Modal -->
+@if (isModalOpen()) {
+  <div class="modal-custom">
+    <div class="modal-dialog-custom">
+      <div class="modal-content shadow-lg rounded-4">
+
+        <!-- En-tête de la modale -->
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <h5 class="modal-title fw-bold mb-1">
+              <span class="material-symbols-outlined me-2 align-middle text-primary">person_add</span>
+              Nouvel utilisateur
+            </h5>
+            <p class="text-muted small mb-0">Remplissez les informations ci-dessous pour créer un compte.</p>
+          </div>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+
+        <!-- Formulaire d'ajout -->
+        <app-user-add-form
+          (userAdded)="onUserAdded($event)"
+          (cancelled)="closeModal()">
+        </app-user-add-form>
+
+      </div>
+    </div>
+  </div>
+}

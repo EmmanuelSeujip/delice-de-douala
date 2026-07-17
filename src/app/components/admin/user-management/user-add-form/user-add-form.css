@@ -1,0 +1,15 @@
+.icon-sm {
+  font-size: 1rem;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.invalid-feedback {
+  font-size: 0.8rem;
+}

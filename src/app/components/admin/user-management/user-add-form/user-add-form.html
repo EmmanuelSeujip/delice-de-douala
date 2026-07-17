@@ -1,0 +1,66 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="modal-body">
+
+    <div class="mb-3">
+      <label for="nom" class="form-label fw-semibold">
+        <span class="material-symbols-outlined icon-sm">person</span>
+        Nom complet
+      </label>
+      <input
+        id="nom"
+        type="text"
+        class="form-control"
+        placeholder="Ex : Jean Dupont"
+        [(ngModel)]="nom"
+        name="nom"
+        required
+        #nomField="ngModel"
+      />
+      @if (nomField.invalid && nomField.touched) {
+        <div class="invalid-feedback d-block">Le nom est requis.</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold">
+        <span class="material-symbols-outlined icon-sm">mail</span>
+        Adresse e-mail
+      </label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        placeholder="Ex : jean@example.com"
+        [(ngModel)]="email"
+        name="email"
+        required
+        email
+        #emailField="ngModel"
+      />
+      @if (emailField.invalid && emailField.touched) {
+        <div class="invalid-feedback d-block">Veuillez saisir un e-mail valide.</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="role" class="form-label fw-semibold">
+        <span class="material-symbols-outlined icon-sm">shield_person</span>
+        Rôle
+      </label>
+      <select id="role" class="form-select" [(ngModel)]="role" name="role" required>
+        @for (r of roles; track r) {
+          <option [value]="r">{{ r }}</option>
+        }
+      </select>
+    </div>
+
+  </div>
+
+  <div class="modal-footer border-0 pt-0">
+    <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Annuler</button>
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+      <span class="material-symbols-outlined icon-sm me-1">person_add</span>
+      Ajouter
+    </button>
+  </div>
+</form>
