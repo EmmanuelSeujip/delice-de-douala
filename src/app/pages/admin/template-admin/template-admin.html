@@ -1,8 +1,10 @@
 <section class="d-flex">
   <admin-sidebar></admin-sidebar>
-  <main class="flex-grow-1">
+  <main class="flex-grow-1" style="min-width: 0;">
     <app-header-admin></app-header-admin>
-
+    <div class="p-4">
+      <router-outlet></router-outlet>
+    </div>
   </main>
 </section>
 

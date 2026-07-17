@@ -2,9 +2,6 @@
   background-color: #fafafa;
   border-bottom: 1px solid #e5e5e5;
   padding: 0.9rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999999999999;
   }
   .brand img{
     width: 50px;
@@ -45,6 +42,7 @@
     font-size: 1.2rem;
     margin-left: 1.2rem;
     text-decoration: none;
+    cursor: pointer;
   }
   .badge-dot{
     position: absolute;

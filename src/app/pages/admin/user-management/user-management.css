@@ -1,0 +1,59 @@
+.icon-btn {
+  font-size: 1.1rem;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Backdrop */
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1040;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Conteneur de la modale */
+.modal-custom {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.modal-dialog-custom {
+  width: 100%;
+  max-width: 480px;
+  pointer-events: all;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajustements responsifs génériques */
+@media (max-width: 768px) {
+  /* Ajuste le header de la page */
+  .page-title-responsive {
+    gap: 16px;
+  }
+
+  .page-title-responsive h3 {
+    font-size: 1.25rem;
+  }
+
+  .page-title-responsive h6 {
+    font-size: 0.9rem;
+  }
+}
+
