@@ -40,3 +40,20 @@
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Ajustements responsifs génériques */
+@media (max-width: 768px) {
+  /* Ajuste le header de la page */
+  .page-title-responsive {
+    gap: 16px;
+  }
+
+  .page-title-responsive h3 {
+    font-size: 1.25rem;
+  }
+
+  .page-title-responsive h6 {
+    font-size: 0.9rem;
+  }
+}
+

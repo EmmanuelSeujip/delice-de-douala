@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LayoutService } from '../../../services/core/layout.service/layout.service';
 @Component({
   selector: 'admin-sidebar',
   imports: [],
@@ -34,4 +35,5 @@ export class Sidebar {
     }
   ];
   selectIndex=0
+  layout = inject(LayoutService);
 }

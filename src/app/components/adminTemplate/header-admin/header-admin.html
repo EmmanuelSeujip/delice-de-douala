@@ -1,11 +1,25 @@
 <header class="navbar align-items-center py-3 px-4 border-bottom border-primary border-opacity-25">
-  <div class="d-flex justify-content-between flex-grow-1">
-    <h3>Bonjour, Emmanuel Seujip</h3>
-    <div class="d-flex gap-5">
-      <div class="search-container d-flex position-relative searchbar">
-        <span class="material-symbols-outlined position-absolute top-50  translate-middle">search</span>
+  <div class="d-flex align-items-center w-100">
+    <div class="d-flex align-items-center gap-3">
+      <!-- Hamburger button for mobile -->
+      <button class="btn btn-link text-dark d-md-none p-0 me-2" (click)="layout.toggleSidebar()">
+        <span class="material-symbols-outlined fs-2">menu</span>
+      </button>
+      <h3 class="d-none d-md-block mb-0">Bonjour, Emmanuel Seujip</h3>
+    </div>
+    
+    <div class="d-flex gap-3 gap-md-5 ms-auto align-items-center">
+      <!-- Desktop Search Bar -->
+      <div class="search-container d-none d-md-flex position-relative searchbar">
+        <span class="material-symbols-outlined position-absolute top-50 translate-middle">search</span>
         <input type="search" name="" id="" class="form-control w-100" placeholder="Rechercher">
       </div>
+      
+      <!-- Mobile Search Icon -->
+      <button class="btn btn-link text-dark d-md-none p-0" type="button">
+        <span class="material-symbols-outlined fs-2">search</span>
+      </button>
+
       <div class="d-flex align-items-center gap-3">
         <button class="btn btn-link position-relative p-2 text-primary" type="button">
           <span class="material-symbols-outlined">notifications</span>
@@ -18,7 +32,6 @@
         <div class="d-flex align-items-center justify-content-center p-2 border border-primary rounded-circle text-primary border-opacity-25">
           <span class="material-symbols-outlined">person</span>
         </div>
-        
       </div>
     </div>
   </div>

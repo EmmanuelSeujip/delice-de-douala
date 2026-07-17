@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LayoutService } from '../../../services/core/layout.service/layout.service';
 
 @Component({
   selector: 'app-header-admin',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './header-admin.css',
 })
 export class HeaderAdmin {
-
+  layout = inject(LayoutService);
 }
