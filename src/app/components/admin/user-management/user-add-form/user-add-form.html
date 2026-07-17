@@ -1,8 +1,8 @@
 <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="modal-body">
 
-    <div class="mb-3">
-      <label for="nom" class="form-label fw-semibold">
+    <div class="mb-4">
+      <label for="nom" class="form-label fw-semibold d-flex align-items-center">
         <span class="material-symbols-outlined icon-sm">person</span>
         Nom complet
       </label>
@@ -21,8 +21,8 @@
       }
     </div>
 
-    <div class="mb-3">
-      <label for="email" class="form-label fw-semibold">
+    <div class="mb-4">
+      <label for="email" class="form-label fw-semibold d-flex align-items-center">
         <span class="material-symbols-outlined icon-sm">mail</span>
         Adresse e-mail
       </label>
@@ -42,8 +42,8 @@
       }
     </div>
 
-    <div class="mb-3">
-      <label for="role" class="form-label fw-semibold">
+    <div class="mb-4">
+      <label for="role" class="form-label fw-semibold d-flex align-items-center">
         <span class="material-symbols-outlined icon-sm">shield_person</span>
         Rôle
       </label>
@@ -57,7 +57,7 @@
   </div>
 
   <div class="modal-footer border-0 pt-0">
-    <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Annuler</button>
+    <button type="button" class="btn btn-outline-danger me-4" (click)="onCancel()">Annuler</button>
     <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
       <span class="material-symbols-outlined icon-sm me-1">person_add</span>
       Ajouter
