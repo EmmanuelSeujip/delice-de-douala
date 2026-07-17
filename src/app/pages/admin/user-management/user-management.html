@@ -16,48 +16,44 @@
 
 
 <!-- Tableau des utilisateurs -->
-<div class="row mt-4">
-  <div class="col-12">
-    <div class="card shadow-sm border-0 rounded-4">
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle user-management-table mb-0 text-nowrap">
-            <thead>
-              <tr>
-                <th>Nom</th>
-                <th>Email</th>
-                <th>Rôle</th>
-                <th>Date d'inscription</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              @for (user of users(); track user.id) {
-                <tr>
-                  <td class="fw-semibold" data-label="Nom">{{ user.nom }}</td>
-                  <td class="text-muted" data-label="Email">{{ user.email }}</td>
-                  <td data-label="Rôle">
-                    <span class="badge rounded-pill"
-                      [class.bg-danger]="user.role === 'Admin'"
-                      [class.bg-primary]="user.role === 'Modérateur'"
-                      [class.bg-secondary]="user.role === 'Utilisateur'">
-                      {{ user.role }}
-                    </span>
-                  </td>
-                  <td class="text-muted" data-label="Date d'inscription">{{ user.dateInscription }}</td>
-                  <td class="actions" data-label="Actions">
-                    <span class="material-symbols-outlined text-muted" style="cursor:pointer">more_vert</span>
-                  </td>
-                </tr>
-              } @empty {
-                <tr>
-                  <td colspan="5" class="text-center text-muted py-4">Aucun utilisateur pour le moment.</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
-      </div>
+<div class="card shadow-sm border-0 rounded-4 mt-4">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle user-management-table mb-0 text-nowrap">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Date d'inscription</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users(); track user.id) {
+            <tr>
+              <td class="fw-semibold" data-label="Nom">{{ user.nom }}</td>
+              <td class="text-muted" data-label="Email">{{ user.email }}</td>
+              <td data-label="Rôle">
+                <span class="badge rounded-pill"
+                  [class.bg-danger]="user.role === 'Admin'"
+                  [class.bg-primary]="user.role === 'Modérateur'"
+                  [class.bg-secondary]="user.role === 'Utilisateur'">
+                  {{ user.role }}
+                </span>
+              </td>
+              <td class="text-muted" data-label="Date d'inscription">{{ user.dateInscription }}</td>
+              <td class="actions" data-label="Actions">
+                <span class="material-symbols-outlined text-muted" style="cursor:pointer">more_vert</span>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="5" class="text-center text-muted py-4">Aucun utilisateur pour le moment.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
