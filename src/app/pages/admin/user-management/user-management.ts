@@ -16,7 +16,6 @@ export class UserManagement {
   isModalOpen = signal(false);
 
   users = signal<User[]>([
-    { id: 1, nom: 'John Doe', email: 'johndoe@gmail.com', role: 'Admin', dateInscription: '12 mars 2024' },
   ]);
 
   private nextId = 2;
