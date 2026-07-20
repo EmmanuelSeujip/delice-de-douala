@@ -44,7 +44,7 @@
   --tertiary-fixed-dim: #ffb694;
   --on-tertiary-fixed: #351000;
   --on-tertiary-fixed-variant: #6d391e;
-  --background: #faf9f8;
+  --background: rgba(250, 249, 248);
   --on-background: #1a1c1c;
   --surface-variant: #e3e2e1;
 }
