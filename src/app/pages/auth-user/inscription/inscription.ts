@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { User } from '../../../models/person';
-import { FormsModule } from '@angular/forms';
-import { AuthUser } from "../auth-user";
 import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { User } from '../../../models/person';
+import { AuthUser } from "../auth-user";
 @Component({
   selector: 'app-inscription',
-  imports: [FormsModule, AuthUser,JsonPipe],
+  imports: [FormsModule, AuthUser, JsonPipe],
   templateUrl: './inscription.html',
   styleUrl: './inscription.css',
 })
 export class Inscription {
-  user:User={
-    nom:"",
-    subname:"",
-    email:"",
-    password:""
+  user: User = {
+    nom: "",
+    subname: "",
+    email: "",
+    password: ""
   }
-  confirmPassword=""
+  confirmPassword = ""
 }

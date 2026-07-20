@@ -6,29 +6,30 @@
   <form action="" class="d-flex flex-column">
     <div class="field">
       <label for="name" class="form-label">Nom <span>*</span></label>
-      <input type="text" id="name" required [(ngModel)]="user.nom" >
+      <input type="text" id="name" name="nom" required [(ngModel)]="user.nom">
     </div>
     <div class="field">
       <label for="subname">Prénom</label>
-      <input type="text" id="subname" [(ngModel)]="user.subname">
+      <input type="text" id="subname" name="subname" [(ngModel)]="user.subname">
     </div>
     <div class="field">
       <label for="email">Email <span>*</span></label>
-      <input type="email" id="email" [(ngModel)]="user.email">
+      <input type="email" id="email" name="email" [(ngModel)]="user.email">
     </div>
     <div class="field">
       <label for="password">Mot de passe</label>
-      <input type="password" id="password" [(ngModel)]="user.password">
+      <input type="password" id="password" name="password" [(ngModel)]="user.password">
     </div>
     <div class="field">
       <label for="confirmPassword">Confirmer le mot de passe</label>
-      <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword">
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword">
     </div>
     <button type="submit" class="btn btn-primary mt-3">
       Soumettre
     </button>
   </form>
-  <pre>
-    {{user | json}}
-  </pre>
+<pre>
+  {{ user | json }}
+</pre>
+
 </app-auth-user>
