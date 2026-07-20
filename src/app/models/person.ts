@@ -1,7 +1,14 @@
 export interface Person {
   id?: number;
-  name: string;
-  subname: string;
+  nom: string;
+  subname?: string;
   email: string;
+  role: string;
+  password?:string;
+  dateInscription?: string;
   phone?: string;
+}
+
+export interface User extends Person{
+  role:"Utilisateur"
 }
