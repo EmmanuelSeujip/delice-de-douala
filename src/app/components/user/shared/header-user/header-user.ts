@@ -8,5 +8,9 @@ import { PanierNavigation } from "../panier-navigation/panier-navigation";
   styleUrl: './header-user.css',
 })
 export class HeaderUser {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

@@ -20,6 +20,10 @@ export class Inscription {
     
   soumettre(event:Event){
     event.preventDefault();
-    console.log(this.user);
+    if(this.user.password !== this.confirmPassword){
+      alert("Les mots de passe ne correspondent pas.");
+    }else{
+      alert("Inscription reussie");
+    }
   }
 }

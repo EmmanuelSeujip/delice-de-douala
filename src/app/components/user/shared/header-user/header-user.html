@@ -1,33 +1,45 @@
-<nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center sticky-top">
-  <a href="#" class="brand">
-    <img src="assets/images/logo.png" alt="Delice" class="logo">
-  </a>
- 
-  <div class="d-flex">
-    <a href="#" class="nav-link-custom">Accueil</a>
-    <a href="#" class="nav-link-custom">Restaurants</a>
-    <a href="#" class="nav-link-custom active">Plats</a>
-    <a href="#" class="nav-link-custom">Favoris</a>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="navbar-brand-wrapper">
+    <a href="#" class="brand">
+      <img src="assets/images/logo.png" alt="Delice" class="logo">
+    </a>
   </div>
- 
-  <div class="d-flex align-items-center">
-    <div class="search-box">
-      <span class="material-symbols-outlined">search</span>
-      <input type="text" placeholder="Rechercher...">
+
+  <!-- Hamburger button for mobile -->
+  <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+    <span class="material-symbols-outlined">{{ isMenuOpen ? 'close' : 'menu' }}</span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="navbar-collapse-custom" [class.open]="isMenuOpen">
+    <div class="nav-links">
+      <a href="#" class="nav-link-custom">Accueil</a>
+      <a href="#" class="nav-link-custom">Restaurants</a>
+      <a href="#" class="nav-link-custom active">Plats</a>
+      <a href="#" class="nav-link-custom">Favoris</a>
     </div>
- 
-    <div class="icon-btn">
-      <span class="material-symbols-outlined">notifications</span>
-      <span class="badge-dot"></span>
-    </div>
- 
-    <div class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#panierModal">
-      <span class="material-symbols-outlined">shopping_cart</span>
-      <span class="badge-dot"></span>
-    </div>
- 
-    <div class="icon-btn">
-      <span class="material-symbols-outlined">person</span>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <span class="material-symbols-outlined">search</span>
+        <input type="text" placeholder="Rechercher...">
+      </div>
+
+      <div class="nav-icons">
+        <div class="icon-btn">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="badge-dot"></span>
+        </div>
+
+        <div class="icon-btn" data-bs-toggle="offcanvas" data-bs-target="#panierModal">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span class="badge-dot"></span>
+        </div>
+
+        <div class="icon-btn">
+          <span class="material-symbols-outlined">person</span>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
