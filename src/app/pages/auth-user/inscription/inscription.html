@@ -1,43 +1,72 @@
 <app-auth-user>
-  <div class="">
-    Inscription
+  <div class="mb-4 text-center">
+    <h2 class="fw-bold text-primary mb-2">Inscription</h2>
+    <p class="text-muted">Retrouvez le meilleur de la gastronomie camerounaise</p>
   </div>
-  <div>Retrouvez le meilleur de la gastronomie camerounaise</div>
-  <form action="" class="d-flex flex-column">
-    <div class="field">
-      <label for="name" class="form-label">Nom <span>*</span></label>
-      <input type="text" id="name" name="nom" required [(ngModel)]="user.nom">
+
+  <form (submit)="soumettre($event)" class="d-flex flex-column gap-3 needs-validation" novalidate>
+    <div class="row g-3">
+      <div class="col-12 col-sm-6">
+        <label for="name" class="form-label fw-semibold">Nom <span class="text-danger">*</span></label>
+        <div class="input-group">
+          <span class="input-group-text bg-light text-muted border-end-0"><span class="material-icons fs-5">person</span></span>
+          <input type="text" id="name" name="nom" class="form-control border-start-0 ps-0" placeholder="Votre nom" required [(ngModel)]="user.nom">
+        </div>
+      </div>
+      
+      <div class="col-12 col-sm-6">
+        <label for="subname" class="form-label fw-semibold">Prénom</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light text-muted border-end-0"><span class="material-icons fs-5">person_outline</span></span>
+          <input type="text" id="subname" name="subname" class="form-control border-start-0 ps-0" placeholder="Votre prénom" [(ngModel)]="user.subname">
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <label for="subname">Prénom</label>
-      <input type="text" id="subname" name="subname" [(ngModel)]="user.subname">
+
+    <div>
+      <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <span class="input-group-text bg-light text-muted border-end-0"><span class="material-icons fs-5">email</span></span>
+        <input type="email" id="email" name="email" class="form-control border-start-0 ps-0" placeholder="exemple@email.com" required [(ngModel)]="user.email">
+      </div>
     </div>
-    <div class="field">
-      <label for="email">Email <span>*</span></label>
-      <input type="email" id="email" name="email" [(ngModel)]="user.email">
+
+    <div>
+      <label for="password" class="form-label fw-semibold">Mot de passe <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <span class="input-group-text bg-light text-muted border-end-0"><span class="material-icons fs-5">lock</span></span>
+        <input type="password" id="password" name="password" class="form-control border-start-0 ps-0" placeholder="Créez un mot de passe" required [(ngModel)]="user.password">
+      </div>
     </div>
-    <div class="field">
-      <label for="password">Mot de passe <span>*</span></label>
-      <input type="password" id="password" name="password" [(ngModel)]="user.password">
+
+    <div>
+      <label for="confirmPassword" class="form-label fw-semibold">Confirmer le mot de passe <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <span class="input-group-text bg-light text-muted border-end-0"><span class="material-icons fs-5">lock_outline</span></span>
+        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control border-start-0 ps-0" placeholder="Confirmez votre mot de passe" required [(ngModel)]="confirmPassword">
+      </div>
+      @if (confirmPassword && user.password && confirmPassword !== user.password) {
+        <div class="form-text text-danger mt-1 d-flex align-items-center">
+          <span class="material-icons fs-6 me-1">error_outline</span> Les mots de passe ne correspondent pas.
+        </div>
+      }
     </div>
-    <div class="field">
-      <label for="confirmPassword">Confirmer le mot de passe</label>
-      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword">
-    </div>
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="
+
+    <button type="submit" class="btn btn-primary btn-lg mt-3 w-100 rounded-3 shadow-sm d-flex justify-content-center align-items-center gap-2 custom-submit-btn" [disabled]="
         user.nom.trim() === '' ||
         user.email.trim() === '' || 
         user.password?.trim() === '' || 
         confirmPassword.trim() === '' ||
         confirmPassword !== user.password
-        "
-      [class.disabled]=""
-      >
-      Soumettre
+        ">
+      <span>Soumettre</span>
+      <span class="material-icons">arrow_forward</span>
     </button>
   </form>
-<pre>
-  {{ user | json }}
-</pre>
+
+  <!-- Debug (optionnel) -->
+  <pre class="mt-4 p-3 bg-light rounded text-muted small" style="display: none;">
+    {{ user | json }}
+  </pre>
 
 </app-auth-user>

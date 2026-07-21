@@ -1,4 +1,36 @@
-.field {
+/* Remove the left border on input fields that follow the icon */
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* Add focus styling to the entire input group */
+.input-group:focus-within .input-group-text,
+.input-group:focus-within .form-control {
+  border-color: var(--bs-primary);
+}
+
+.input-group-text {
+  transition: border-color 0.15s ease-in-out;
+}
+
+.form-control {
+  transition: border-color 0.15s ease-in-out;
+}
+
+/* Custom button hover effect */
+.custom-submit-btn {
+  transition: all 0.3s ease;
+}
+
+.custom-submit-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+
+/* Fix material-icons alignment */
+.material-icons {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
