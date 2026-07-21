@@ -1,11 +1,10 @@
-import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../../../models/person';
 import { AuthUser } from "../auth-user";
 @Component({
   selector: 'app-inscription',
-  imports: [FormsModule, AuthUser, JsonPipe],
+  imports: [FormsModule, AuthUser],
   templateUrl: './inscription.html',
   styleUrl: './inscription.css',
 })
@@ -24,6 +23,13 @@ export class Inscription {
       alert("Les mots de passe ne correspondent pas.");
     } else {
       alert("Inscription reussie");
+      this.user={
+          nom: "",
+          subname: "",
+          email: "",
+          password: ""
+      }
+      this.confirmPassword=""
     }
   }
 }
