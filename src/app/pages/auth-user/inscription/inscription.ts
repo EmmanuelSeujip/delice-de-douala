@@ -17,4 +17,9 @@ export class Inscription {
     password: ""
   }
   confirmPassword = ""
+    
+  soumettre(event:Event){
+    event.preventDefault();
+    console.log(this.user);
+  }
 }
