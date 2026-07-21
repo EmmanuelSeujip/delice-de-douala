@@ -1,7 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { User } from '../../../models/person';
+import { User } from '../../../../models/person';
 import { AuthUser } from "../auth-user";
 @Component({
   selector: 'app-inscription',
@@ -17,12 +17,12 @@ export class Inscription {
     password: ""
   }
   confirmPassword = ""
-    
-  soumettre(event:Event){
+
+  soumettre(event: Event) {
     event.preventDefault();
-    if(this.user.password !== this.confirmPassword){
+    if (this.user.password !== this.confirmPassword) {
       alert("Les mots de passe ne correspondent pas.");
-    }else{
+    } else {
       alert("Inscription reussie");
     }
   }
