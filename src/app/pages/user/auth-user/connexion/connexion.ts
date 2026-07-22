@@ -1,25 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthUser } from "../auth-user";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-connexion',
-  imports: [AuthUser,FormsModule,ReactiveFormsModule],
+  imports: [AuthUser,ReactiveFormsModule],
   templateUrl: './connexion.html',
   styleUrl: './connexion.css',
 })
 export class Connexion {
-  user = {
-    email: '',
-    password: ''
-  };
+  private readonly fb = inject(FormBuilder)
+  readonly connectionForm = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+  });
+  
+  get email() {
+    return this.connectionForm.controls.email;
+  }
 
-  soumettre(event: Event) {
-    event.preventDefault();
-    alert("Connexion réussie");
-    this.user={
-      email: '',
-      password: ''
-    }
+  get password() {
+    return this.connectionForm.controls.password;
+  }
+
+  soumettre(event:Event):void {    
+    if(this.connectionForm.invalid) return;
+    console.log('Connexion :', this.connectionForm.value)
+    
   }
 }
