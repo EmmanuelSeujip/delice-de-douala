@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthUser } from "../auth-user";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-connexion',
-  imports: [AuthUser,FormsModule],
+  imports: [AuthUser,FormsModule,ReactiveFormsModule],
   templateUrl: './connexion.html',
   styleUrl: './connexion.css',
 })
