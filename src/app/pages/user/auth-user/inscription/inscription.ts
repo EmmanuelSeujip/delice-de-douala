@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../../../../models/person';
 import { AuthUser } from "../auth-user";
 @Component({
   selector: 'app-inscription',
-  imports: [FormsModule, AuthUser],
+  imports: [ReactiveFormsModule, AuthUser],
   templateUrl: './inscription.html',
   styleUrl: './inscription.css',
 })
 export class Inscription {
+  private readonly fb = inject(FormBuilder)
+  
   user: User = {
     nom: "",
     subname: "",
