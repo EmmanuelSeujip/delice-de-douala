@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { User } from '../../../../models/person';
 import { AuthUser } from "../auth-user";
 @Component({
@@ -10,28 +10,59 @@ import { AuthUser } from "../auth-user";
 })
 export class Inscription {
   private readonly fb = inject(FormBuilder)
-  
-  user: User = {
-    nom: "",
-    subname: "",
-    email: "",
-    password: ""
+  readonly inscriptionForm = this.fb.group({
+    nom:['',Validators.required,Validators.minLength(3)],
+    prenom:[''],
+    email:['',Validators.required,Validators.email],
+    password: ['', [Validators.required, Validators.pattern("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}")]],
+    confirmPassword:['',Validators.required]
+  })
+  private passwordsMatchValidator(group: AbstractControl): ValidationErrors | null {
+    const password = group.get('password')?.value;
+    const confirmPassword = group.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { passwordMismatch: true };
   }
-  confirmPassword = ""
+  get nom(){
+    return this.inscriptionForm.controls.nom
+  }
 
-  soumettre(event: Event) {
-    event.preventDefault();
-    if (this.user.password !== this.confirmPassword) {
-      alert("Les mots de passe ne correspondent pas.");
-    } else {
-      alert("Inscription reussie");
-      this.user={
-          nom: "",
-          subname: "",
-          email: "",
-          password: ""
-      }
-      this.confirmPassword=""
-    }
+  get prenom(){
+    return this.inscriptionForm.controls.prenom
+  }
+
+  get email(){
+    return this.inscriptionForm.controls.email
+  }
+
+  get password(){
+    return this.inscriptionForm.controls.password
+  }
+
+  get confirmPassword(){
+    return this.inscriptionForm.controls.confirmPassword
+  }
+  
+  hasMinLength(): boolean {
+    return (this.password.value || '').length >= 8;
+  }
+
+
+  hasUpperCase(): boolean {
+    return /[A-Z]/.test(this.password.value || '');
+  }
+
+  hasLowerCase(): boolean {
+    return /[a-z]/.test(this.password.value || '');
+  }
+
+  hasNumber(): boolean {
+    return /[0-9]/.test(this.password.value || '');
+  }
+
+  hasSpecialChar(): boolean {
+    return /[#?!@$%^&*-]/.test(this.password.value || '');
+  }
+  soumettre(){
+
   }
 }
